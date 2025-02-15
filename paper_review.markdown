@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Paper Review
+title: Paper Reviews
 permalink: /paper_review/
 ---
 

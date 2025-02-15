@@ -18,16 +18,25 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title LOL
+title: Alexander Shabalin
 email: ashabalin9999@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: I'm Alexander, PhD student from Constructor University Bremen, studying Deep Learning and Natural Language Processing. Here you can find more information about me and short reviews of papers that I read.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ashaba1in.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: ""
+url: "https://ashaba1in.github.io"
+# twitter_username: ""
 github_username: ashaba1in
+linkedin_username: alexander-shabalin-448a7a253
+scholar_username: a7Mq82AAAAAJ&hl
+
+# Social / dark mode settings
+minima:
+  skin: auto
+  social_links:
+    - {
+        platform: email,
+        user_url: "mailto:ashabalin9999@gmail.com",
+        user_title: "ashabalin9999@gmail.com",
+      }
 
 # Build settings
 theme: minima

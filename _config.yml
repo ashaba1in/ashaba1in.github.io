@@ -31,12 +31,6 @@ scholar_username: a7Mq82AAAAAJ&hl
 # Social / dark mode settings
 minima:
   skin: auto
-  social_links:
-    - {
-        platform: email,
-        user_url: "mailto:ashabalin9999@gmail.com",
-        user_title: "ashabalin9999@gmail.com",
-      }
 
 # Build settings
 theme: minima

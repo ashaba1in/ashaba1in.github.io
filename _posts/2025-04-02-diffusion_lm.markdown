@@ -90,7 +90,7 @@ $$\hat{\mathbf{w}} = \operatorname{argmin}_{\mathbf{w} \in \mathcal{S}} \sum_{\m
 
 where $$\mathcal{L}$$ is a negative BLEU score.
 
-_**Alexander's remark**: This is a kind of cheat, because the technique produces samples of better quality in exchange for a loss of computing speed. This loss of speed should be taken into account, as it limits the practical applicability._
+_**Alexander's remark**: This is a kind of cheat, because the technique produces samples of better quality in exchange for a loss of computing speed. This loss of speed should be taken into account, as it limits the practical applicability. Additionally, the use of MBR makes it harder to compare Diffusion LM with other approaches, and it suggests that without MBR the quality of the proposed method drops significantly._
 
 
 ### Datasets

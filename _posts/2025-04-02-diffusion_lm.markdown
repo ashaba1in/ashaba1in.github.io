@@ -1,18 +1,20 @@
 ---
 layout: post
-title:  "Diffusion LM"
-date:   2025-04-02 16:09:34 +0100
-categories: text diffusion
+long_title: "Diffusion-LM Improves Controllable Text Generation"
+title: "Diffusion-LM"
+date: 2025-04-02 16:09:34 +0100
+categories: text_diffusion
 tag: NeurIPS 2022
+show_link: true
 ---
 
 <script type="text/javascript" async
  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 
-<a href="https://arxiv.org/abs/2205.14217">Link to the paper</a>
+**<a href="https://arxiv.org/abs/2205.14217">Link to the paper</a>**
 
-**Diffusion LM** is the first paper that proposed continuous gaussian text diffusion for text data.
+**TL;DR:** Gaussian Diffusion Model trained end-to-end on word embeddings. 
 
 ### Diffusion process
 
@@ -38,7 +40,7 @@ In practice, it is implemented as a single linear layer $$p_\theta(. \mid x_i) =
 
 The resulting pipeline can be depicted like this.
 
-![image](/assets/diffusion_lm_diffusion_process.png){:style="width:90%; display:block; margin-left:auto; margin-right:auto"}
+![image](/assets/diffusion_lm/diffusion_process.png){:style="width:90%; display:block; margin-left:auto; margin-right:auto"}
 
 ### Training objective
 
@@ -48,12 +50,12 @@ $$\mathcal{L}^{\mathrm{e}2\mathrm{e}}(\mathbf{w})=\underset{q_\phi\left(\mathbf{
 
 _**Alexander's remark**:
 In the [official implementation](https://github.com/XiangLi1999/Diffusion-LM/blob/main/improved-diffusion/improved_diffusion/gaussian_diffusion.py#L1264) the term $$\left\|f_\theta(\mathbf{x}_t, t) - \mathbf{x}_0\right\|^2$$ is replaced with $$\left\|\mu_\theta\left(\mathbf{x}_t, t\right) - \hat{\mu}\left(\mathbf{x}_t, \mathbf{x}_0\right)\right\|^2$$, where $$\mu_\theta\left(\mathbf{x}_t, t\right)$$ is a mean of the posterior distribution $$q(x_{t-1} | x_t)$$ calculated using the predicted $$x_0$$. While these objectives are almost identical in terms of an optimal solution, they have different scaling constants, which might be important.
-In addition, authors also add a [regularization](https://github.com/XiangLi1999/Diffusion-LM/blob/main/improved-diffusion/improved_diffusion/gaussian_diffusion.py#L1291) loss term $$\left\|\sqrt{\bar{\alpha}_T}x_T\right\|^2$$. Without this term embeddings most probably will explode, because it makes the denoising task trivial (SNR becomes huge for all timesteps)._
+In addition, authors also add a [regularization](https://github.com/XiangLi1999/Diffusion-LM/blob/main/improved-diffusion/improved_diffusion/gaussian_diffusion.py#L1291) loss term $$\left\|\sqrt{\bar{\alpha}_T}x_0\right\|^2$$. Without this term embeddings most probably will explode, because it makes the denoising task trivial (SNR becomes huge for all timesteps)._
 
 The term $$-\log p_\theta(\mathbf{w} \mid \mathbf{x}_0)$$ is required to prevent another unwanted local minimum – embedding collapse.
 
 **Important.** Trained embeddings turns out to be better, than fixed pre-trained. Also, learning to predict $$x_0$$ results in much better quality, than predicting $$\varepsilon$$ as commonly done in image diffusion models.
-![image](/assets/diffusion_lm_ablation.png){:style="width:50%; display:block; margin-left:auto; margin-right:auto"}
+![image](/assets/diffusion_lm/ablation.png){:style="width:50%; display:block; margin-left:auto; margin-right:auto"}
 
 
 ### Clamping trick
@@ -101,9 +103,9 @@ The evaluation is conducted using two datasets: E2E (50k restaurant reviews) and
 
 Authors consider 6 control tasks shown in this table. The first 4 tasks rely on a classifier, and the last 2 tasks are classifier free.
 
-![image](/assets/diffusion_lm_dataset_examples.png){:style="width:90%; display:block; margin-left:auto; margin-right:auto"}
+![image](/assets/diffusion_lm/dataset_examples.png){:style="width:90%; display:block; margin-left:auto; margin-right:auto"}
 
 ### Results
 
-![image](/assets/diffusion_lm_results.png){:style="width:90%; display:block; margin-left:auto; margin-right:auto"}
+![image](/assets/diffusion_lm/results.png){:style="width:90%; display:block; margin-left:auto; margin-right:auto"}
 

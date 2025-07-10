@@ -22,7 +22,7 @@ Hi, my name is Alexander! I am a PhD student at Constructor University, Bremen. 
 </p>
 
 <p style="text-align: justify">
-Since 2021 I have been working in the Bayesian Methods Research Group under the supervision of Dmitry Vetrov. I've received both BSc and MSc degrees from the Faculty of Computer Science at HSE University.
+Since 2021, I have been working in the Bayesian Methods Research Group under the supervision of Dmitry Vetrov. I've received both BSc and MSc degrees from the Faculty of Computer Science at HSE University.
 </p>
 
 &nbsp;

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never" default-locale="en-US">
+  <info>
+    <title>Association for Computational Linguistics - Conference Proceedings</title>
+    <title-short>ACL</title-short>
+    <id>http://www.zotero.org/styles/association-for-computational-linguistics</id>
+    <link href="http://www.zotero.org/styles/association-for-computational-linguistics" rel="self"/>
+    <link href="http://www.aclweb.org/" rel="documentation"/>
+    <author>
+      <name>Hajime Senuma</name>
+      <email>hajime.senuma@gmail.com</email>
+      <uri>https://github.com/hajimes</uri>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="engineering"/>
+    <category field="linguistics"/>
+    <summary>CSL for papers in ACL-related conference proceedings, e.g., ACL-HLT, EACL, NAACL-HTL, and EMNLP. (But NOT for the journal "Computational Linguistics")</summary>
+    <published>2013-11-20T21:00:00Z</published>
+    <updated>2013-11-20T21:00:00Z</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+
+  <!-- Author Macros -->
+  <macro name="author">
+    <names variable="author">
+      <name form="long" and="text" delimiter=", " />
+      <substitute>
+        <text value=""/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="author-short">
+    <names variable="author">
+      <name form="short" and="text" delimiter=", " />
+      <substitute>
+        <names variable="editor">
+          <name form="short" and="text" delimiter=", " />
+        </names>
+        <text value="mis"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <!-- Editor Macro -->
+  <macro name="editor">
+    <names variable="editor">
+      <name form="long" and="text" delimiter=", " />
+      <label prefix=", " form="long"/>
+    </names>
+  </macro>
+
+  <!-- Author or Editor Macro -->
+  <macro name="author-or-editor">
+    <names variable="author">
+      <name form="long" and="text" delimiter=", " />
+      <substitute>
+        <text macro="editor"/>
+        <text value=""/>
+      </substitute>
+    </names>
+  </macro>
+
+  <!-- Year Macro -->
+  <macro name="year-date">
+    <choose>
+      <if variable="issued">
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+      </if>
+      <else>
+        <text value=" "/>
+      </else>
+    </choose>
+  </macro>
+
+  <!-- Month Macro -->
+  <macro name="month">
+    <date variable="issued">
+      <date-part name="month"/>
+    </date>
+  </macro>
+
+  <!-- Edition Macro -->
+  <macro name="edition">
+    <number variable="edition" form="ordinal"/>
+    <text term="edition" prefix=" "/>
+  </macro>
+
+  <!-- Volume or Number Macro -->
+  <macro name="volume-or-number">
+    <choose>
+      <if variable="volume">
+        <group delimiter=" ">
+          <label variable="volume"/>
+          <number variable="volume"/>
+        </group>
+      </if>
+      <else-if variable="number">
+        <group delimiter=" ">
+          <text value="number"/>
+          <number variable="number"/>
+        </group>
+      </else-if>
+      <else-if variable="issue">
+        <group delimiter=" ">
+          <text value="number"/>
+          <number variable="issue"/>
+        </group>
+      </else-if>
+    </choose>
+  </macro>
+
+  <!-- Event or Publisher Place Macro -->
+  <macro name="event-or-publisher-place">
+    <choose>
+      <if variable="event-place">
+        <text variable="event-place"/>
+      </if>
+      <else>
+        <text variable="publisher-place"/>
+      </else>
+    </choose>
+  </macro>
+
+  <!-- Volume and Collection Title Macro -->
+  <macro name="volume-and-collection-title">
+    <choose>
+      <if variable="volume collection-title" match="all">
+        <group delimiter=" ">
+          <text term="volume"/>
+          <number variable="volume"/>
+          <text value="of"/>
+          <text variable="collection-title" font-style="italic"/>
+        </group>
+      </if>
+      <else-if variable="volume">
+        <group delimiter=" ">
+          <text term="volume"/>
+          <number variable="volume"/>
+        </group>
+      </else-if>
+      <else>
+        <text variable="collection-title"/>
+      </else>
+    </choose>
+  </macro>
+
+  <!-- Bibliography Layout -->
+  <bibliography et-al-min="20" et-al-use-first="19">
+    <sort>
+      <key macro="author-or-editor"/>
+      <key macro="year-date"/>
+      <key variable="title"/>
+    </sort>
+    <layout>
+      <!-- Title -->
+      <text variable="title" suffix="" font-weight="bold"/>
+
+      <!-- Everything Else in Smaller Text -->
+      <group font-size="small">
+        <!-- Author -->
+        <choose>
+          <if type="book">
+            <text macro="author-or-editor" suffix=". "/>
+          </if>
+          <else>
+            <text macro="author" suffix=". "/>
+          </else>
+        </choose>
+
+        <!-- Year -->
+        <date variable="issued" prefix=" " suffix=", ">
+          <date-part name="year"/>
+        </date>
+
+        <!-- Additional Information -->
+        <choose>
+          <!-- For articles -->
+          <if type="article-journal">
+            <group prefix=" " suffix=". " delimiter=", ">
+              <text variable="container-title" font-style="italic"/>
+              <text variable="volume"/>
+              <text variable="issue" prefix="(" suffix=")"/>
+              <text variable="page" prefix=":"/>
+              <text macro="month"/>
+            </group>
+          </if>
+          <!-- For books -->
+          <else-if type="book">
+            <text variable="title" prefix=" " suffix=". " font-style="italic"/>
+            <group delimiter=", " suffix=". ">
+              <text macro="volume-and-collection-title"/>
+            </group>
+            <group delimiter=", " prefix=" " suffix=". ">
+              <text variable="publisher"/>
+              <text variable="publisher-place"/>
+              <text macro="edition"/>
+              <text macro="month"/>
+            </group>
+          </else-if>
+          <!-- For other cases -->
+          <else>
+               <text variable="issue" prefix=" " suffix="."/>
+          </else>
+        </choose>
+
+      </group>
+    </layout>
+  </bibliography>
+</style>

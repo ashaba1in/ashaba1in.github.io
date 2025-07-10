@@ -36,6 +36,15 @@ minima:
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll/scholar
+
+scholar:
+  style: _bibliography/association-for-computational-linguistics.csl.txt
+  source: ./_bibliography
+  bibliography: references.bib
+  bibliography_template: bibtemplate
+  bibliography_list_tag: div
+  bibliography_item_tag: ul
 
 # Exclude from processing.
 # The following items will not be processed, by default.

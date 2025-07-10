@@ -1,0 +1,47 @@
+@misc{shabalin2025smoothiesmoothingdiffusiontoken,
+      title={Smoothie: Smoothing Diffusion on Token Embeddings for Text Generation},
+      author={<b>Alexander Shabalin</b> and Viacheslav Meshchaninov and Dmitry Vetrov},
+      year={2025},
+      eprint={2505.18853},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.18853},
+      abstract={Diffusion models have achieved state-of-the-art performance in generating images, audio, and video, but their adaptation to text remains challenging due to its discrete nature. Prior approaches either apply Gaussian diffusion in continuous latent spaces, which inherits semantic structure but struggles with token decoding, or operate in categorical simplex space, which respect discreteness but disregard semantic relation between tokens. In this paper, we propose Smoothing Diffusion on Token Embeddings (Smoothie), a novel diffusion method that combines the strengths of both approaches by progressively smoothing token embeddings based on semantic similarity. This technique enables gradual information removal while maintaining a natural decoding process. Experimental results on several sequence-to-sequence generation tasks demonstrate that Smoothie outperforms existing diffusion-based models in generation quality. Furthermore, ablation studies show that our proposed diffusion space yields better performance than both the standard embedding space and the categorical simplex.},
+      code={https://github.com/ashaba1in/smoothie},
+      issue={preprint},
+}
+
+@misc{meshchaninov2025compressedsmoothlatentspace,
+      title={Compressed and Smooth Latent Space for Text Diffusion Modeling},
+      author={Viacheslav Meshchaninov and Egor Chimbulatov and <b>Alexander Shabalin</b> and Aleksandr Abramov and Dmitry Vetrov},
+      year={2025},
+      eprint={2506.21170},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2506.21170},
+      abstract={Autoregressive language models dominate modern text generation, yet their sequential nature introduces fundamental limitations: decoding is slow, and maintaining global coherence remains challenging. Diffusion models offer a promising alternative by enabling parallel generation and flexible control; however, their application to text generation is hindered by the high dimensionality of token-level representations. We introduce Cosmos, a novel approach to text generation that operates entirely in a compressed, smooth latent space tailored specifically for diffusion. This space is learned using an autoencoder trained simultaneously for token-level reconstruction and alignment with frozen activations from a pretrained language encoder, providing robust semantic grounding and enabling effective perturbation-based augmentations. Empirically, we demonstrate that text representations can be compressed by 8× while maintaining generation quality comparable to token-level diffusion models. Furthermore, increasing the latent sequence length allows Cosmos to surpass both diffusion-based and autoregressive baselines. We evaluate Cosmos on four diverse generative tasks including story generation, question generation, summarization, and detoxification and compare it with various generative paradigms. Cosmos achieves comparable or superior generation quality while offering more than 2× faster inference.},
+      issue={preprint},
+}
+
+@misc{shabalin2025tencdmunderstandingpropertiesdiffusion,
+      title={TEncDM: Understanding the Properties of the Diffusion Model in the Space of Language Model Encodings},
+      author={<b>Alexander Shabalin</b> and Viacheslav Meshchaninov and Egor Chimbulatov and Vladislav Lapikov and Roman Kim and Grigory Bartosh and Dmitry Molchanov and Sergey Markov and Dmitry Vetrov},
+      year={2025},
+      eprint={2402.19097},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2402.19097},
+      abstract={This paper presents the Text Encoding Diffusion Model (TEncDM), a novel approach to diffusion modeling that operates in the space of pre-trained language model encodings. In contrast to traditionally used embeddings, encodings integrate contextual information. In our approach, we also employ a transformer-based decoder, specifically designed to incorporate context in the token prediction process. We conduct a comprehensive examination of the influence of the encoder, decoder, noise scheduler, and self-conditioning on zero-shot generation. Furthermore, we compare TEncDM with previous approaches on three conditional text generation tasks: QQP, XSum, and Wiki-Auto. The results show that TEncDM exhibits superior performance compared to existing non-autoregressive diffusion models.},
+      code={https://github.com/M0RJIQUE/tencdm},
+      issue={AAAI (oral)},
+}
+
+@inproceedings{shabalin2023regrokking,
+    title={[Re] {\textquotedblleft}Towards Understanding Grokking{\textquotedblright}},
+    author={<b>Alexander Shabalin</b> and Ildus Sadrtdinov and Evgeniy Shabalin},
+    issue={ML Reproducibility Challenge},
+    year={2023},
+    url={https://openreview.net/forum?id=Vz9VLcJqKS},
+    abstract={In this work, we attempt to reproduce the results of the NeurIPS 2022 paper "Towards Understanding Grokking: An Effective Theory of Representation Learning". This study shows that the training process can happen in four regimes: memorization, grokking, comprehension and confusion. We first try to reproduce the results on the toy example described in the paper and then switch to the MNIST dataset. Additionally, we investigate the consistency of phases depending on data and weight initialization and propose smooth phase diagrams for better visual perception.},
+    code={https://github.com/isadrtdinov/grokking-reproduction}
+}

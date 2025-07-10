@@ -1,0 +1,34 @@
+{% if page.mathjax %}
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+{% endif %}
+<script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+      $(".btnId").click(function(){
+          var str = $(this).attr('id');
+          var ret = str.split("_");
+          var id = ret[1];
+          $('#' + id).toggle();
+          $(this).toggleClass("dropped");
+      });
+  });
+
+</script>
+<script>
+  function toggleArrow(year) {
+    const content = document.getElementById(`content-${year}`);
+    const arrow = document.getElementById(`arrow-${year}`);
+
+    // Toggle the display of the content
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      arrow.classList.add("up"); // Rotate the arrow
+    } else {
+      content.style.display = "none";
+      arrow.classList.remove("up"); // Reset the arrow
+    }
+  }
+</script>

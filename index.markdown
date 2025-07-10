@@ -22,7 +22,7 @@ Hi, my name is Alexander! I am a PhD student at <a href="https://constructor.uni
 </p>
 
 <p style="text-align: justify">
-Since 2021, I have been working at the <a href="https://bayesgroup.org/">Bayesian Methods Research Group</a> under the supervision of <a href="https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en">Dmitry Vetrov</a>. I've received both BSc and MSc degrees from the <a href="https://cs.hse.ru/en/">Faculty of Computer Science</a> at HSE University. During my undergrad, I worked at Yandex on the recommendation systems and at <a href="https://cs.hse.ru/en/ai/clst/computational-pragmatics/">HSE lab</a> on the word sense induction problem.
+Since 2021, I have been working at the <a href="https://bayesgroup.org/">Bayesian Methods Research Group</a> under the supervision of <a href="https://scholar.google.com/citations?user=7HU0UoUAAAAJ&hl=en">Dmitry Vetrov</a>. I've received both BSc and MSc degrees from the <a href="https://cs.hse.ru/en/">Faculty of Computer Science</a> at HSE University. During my undergrad, I worked at <a href="https://yandex.com/company/">Yandex</a> on the recommendation systems and at <a href="https://cs.hse.ru/en/ai/clst/computational-pragmatics/">HSE lab</a> on the word sense induction problem.
 </p>
 
 <p style="text-align: justify">

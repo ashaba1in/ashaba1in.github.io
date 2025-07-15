@@ -2,20 +2,20 @@ const nodes = [
   { id: "Language modelling", url: "/definitions/2025/03/08/language_modeling.html", r: 20, color: "#E0A500"},
   { id: "Text generation", url: "/definitions/2025/04/12/text_generation.html", r: 15, color: "#E0A500"},
   { id: "Text retrieval", url: "/definitions/2025/04/12/text_retrieval.html", r: 15, color: "#E0A500"},
-  { id: "Continuous diffusion models", url: "/definitions/2025/03/12/continuous_diffusion_models.html", r: 13, color: "#E0A500"}
+  { id: "Continuous diffusion models", url: "/definitions/2025/03/12/continuous_diffusion_models.html", r: 13, color: "#E0A500"},
   { id: "TSDAE", url: "/text_autoencoder/2025/04/12/tsdae.html", r: 10, color: "#76AB21"},
-  { id: "Diffusion-LM", url: "/text_diffusion/2025/04/02/diffusion_lm.html", r: 10, color: "#76AB21"}
-  { id: "CDCD", url: "/text_diffusion/2025/03/16/cdcd.html", r: 10, color: "#76AB21"}
+  { id: "Diffusion-LM", url: "/text_diffusion/2025/04/02/diffusion_lm.html", r: 10, color: "#76AB21"},
+  { id: "CDCD", url: "/text_diffusion/2025/03/16/cdcd.html", r: 10, color: "#76AB21"},
 ];
 // blue #1982C4, red #CC0007
 
 const links = [
   { source: "Language modelling", target: "Text generation" },
   { source: "Language modelling", target: "Text retrieval" },
-  { source: "Text generation", target: "Continuous diffusion models" }
+  { source: "Text generation", target: "Continuous diffusion models" },
   { source: "Text retrieval", target: "TSDAE" },
-  { source: "Continuous diffusion models", target: "Diffusion-LM" }
-  { source: "Continuous diffusion models", target: "CDCD" }
+  { source: "Continuous diffusion models", target: "Diffusion-LM" },
+  { source: "Continuous diffusion models", target: "CDCD" },
 ];
 
 const width = 600, height = 500;
